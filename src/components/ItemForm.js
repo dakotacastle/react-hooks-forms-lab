@@ -1,9 +1,18 @@
 import React from "react";
 import { v4 as uuid } from "uuid";
 
-function ItemForm(props) {
+function handleSubmit(event) {
+  event.preventDefault();
+  const formData = {
+    
+  };
+  props.sendFormDataSomewhere(formData);
+  ;
+}
+
+function ItemForm(prop) {
   return (
-    <form className="NewItem">
+    <form className="NewItem" onItemFormSubmit={handleSubmit}>
       <label>
         Name:
         <input type="text" name="name" />
